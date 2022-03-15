@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private GameManager gameManager;
     private CircleCollider2D circleCollider;
     private Rigidbody2D rb;
     private bool alive = true;
@@ -48,7 +49,7 @@ public class PlayerController : MonoBehaviour
         rb.velocity = Vector2.zero;
         circleCollider.enabled = false;
         alive = false;
-        GameManager.GameOver();
+        gameManager.GameOver();
     }
 
     // Setup a timer to ensure player can't jump too frequently

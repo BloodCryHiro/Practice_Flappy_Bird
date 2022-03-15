@@ -5,21 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static int point = 0;
+    public int point = 0;
 
     private void Start()
     {
         point = 0;
     }
 
-    public static void GameOver()
+    public void GameOver()
     {
-        Debug.Log("Game Over");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    public static void Pause()
-    {
-
+        // something
     }
 }

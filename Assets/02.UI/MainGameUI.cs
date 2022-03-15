@@ -6,14 +6,16 @@ using TMPro;
 
 public class MainGameUI : MonoBehaviour
 {
+    [SerializeField] private GameManager gameManager;
     private bool isGamePause = false;
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject deathMenu;
 
     [SerializeField] private TMP_Text pointText;
 
     private void Update()
     {
-        pointText.text = "Point: " + GameManager.point;
+        pointText.text = "Point: " + gameManager.point;
     }
 
     public void PauseGame()

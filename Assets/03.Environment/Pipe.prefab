@@ -379,4 +379,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2de2292a552c07419e5f21306e12f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 6132974412383355016, guid: ca0088cd70e2e2a41b9cac97624ee658, type: 3}
   pipeController: {fileID: 1980134221230762323}
