@@ -6,35 +6,29 @@ using TMPro;
 
 public class MainGameUI : MonoBehaviour
 {
-    private bool isGamePause = false;
+    [SerializeField] private GameObject waitForJump;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject deathMenu;
-
     [SerializeField] private TMP_Text pointText;
 
     private void Update()
     {
         pointText.text = "Point: " + GameObject.Find("GameManager").GetComponent<GameManager>().point;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            waitForJump.SetActive(false);
     }
 
     public void PauseGame()
     {
-        if (!isGamePause)
-        {
-            Time.timeScale = 0f;
-            isGamePause = true;
-            pauseMenu.SetActive(true);
-        }
+        Time.timeScale = 0f;
+        pauseMenu.SetActive(true);
     }
 
     public void ResumeGame()
     {
-        if (isGamePause)
-        {
-            Time.timeScale = 1f;
-            isGamePause = false;
-            pauseMenu.SetActive(false);
-        }
+        Time.timeScale = 1f;
+        pauseMenu.SetActive(false);
     }
 
     public void BackToMainMenu()
@@ -56,6 +50,7 @@ public class MainGameUI : MonoBehaviour
 
     public void RestartGame()
     {
+        deathMenu.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene(1);
     }
