@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PipeDetector : MonoBehaviour
 {
-    [SerializeField] private GameManager gameManager;
     [SerializeField] private PipeController pipeController;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -21,7 +20,6 @@ public class PipeDetector : MonoBehaviour
 
     private void GetPoint()
     {
-        gameManager.point++;
-        // Player get point and present it on UI
+        GameObject.Find("GameManager").GetComponent<GameManager>().point++;
     }
 }

@@ -704,7 +704,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cb1a2a6964aacd469845662b7ba1cbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 967643506}
   pauseMenu: {fileID: 412055009}
   deathMenu: {fileID: 1758984109}
   pointText: {fileID: 365371759}
@@ -786,7 +785,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 639987315616864493, guid: 1c27f8a590a86244b94530b90de897f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 639987315616864493, guid: 1c27f8a590a86244b94530b90de897f1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1273,7 +1272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 639987315616864493, guid: 1c27f8a590a86244b94530b90de897f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 639987315616864493, guid: 1c27f8a590a86244b94530b90de897f1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1527,7 +1526,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 73740138}
         m_TargetAssemblyTypeName: MainGameUI, Assembly-CSharp
-        m_MethodName: ResumeGame
+        m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1709,17 +1708,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 940928761}
   m_CullTransparentMesh: 1
---- !u!114 &967643506 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6132974412383355016, guid: ca0088cd70e2e2a41b9cac97624ee658, type: 3}
-  m_PrefabInstance: {fileID: 6132974411718234618}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f64b84bb8f746f41a17cea9cd4d9aba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1003212973
 GameObject:
   m_ObjectHideFlags: 0
@@ -2569,7 +2557,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c57f04cd2e5ee49805e5c2683f174e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 6132974412383355016, guid: ca0088cd70e2e2a41b9cac97624ee658, type: 3}
   jumpForce: 15
 --- !u!58 &1769671903
 CircleCollider2D:
@@ -3149,7 +3136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 639987315616864493, guid: 1c27f8a590a86244b94530b90de897f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 639987315616864493, guid: 1c27f8a590a86244b94530b90de897f1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3192,6 +3179,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6132974412383355016, guid: ca0088cd70e2e2a41b9cac97624ee658, type: 3}
+      propertyPath: MGUI
+      value: 
+      objectReference: {fileID: 73740138}
     - target: {fileID: 6132974412383355018, guid: ca0088cd70e2e2a41b9cac97624ee658, type: 3}
       propertyPath: m_Name
       value: GameManager

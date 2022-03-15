@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private MainGameUI MGUI;
     public int point = 0;
 
     private void Start()
@@ -14,6 +15,6 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        // something
+        GameObject.Find("Canvas").GetComponent<MainGameUI>().EnterDeathMenu();
     }
 }

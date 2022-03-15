@@ -6,7 +6,6 @@ using TMPro;
 
 public class MainGameUI : MonoBehaviour
 {
-    [SerializeField] private GameManager gameManager;
     private bool isGamePause = false;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject deathMenu;
@@ -15,7 +14,7 @@ public class MainGameUI : MonoBehaviour
 
     private void Update()
     {
-        pointText.text = "Point: " + gameManager.point;
+        pointText.text = "Point: " + GameObject.Find("GameManager").GetComponent<GameManager>().point;
     }
 
     public void PauseGame()
@@ -47,5 +46,17 @@ public class MainGameUI : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void EnterDeathMenu()
+    {
+        Time.timeScale = 0f;
+        deathMenu.SetActive(true);
+    }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(1);
     }
 }
