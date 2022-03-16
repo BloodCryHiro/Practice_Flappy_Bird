@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private CircleCollider2D circleCollider;
+    private CapsuleCollider2D playerCollider;
     private Rigidbody2D rb;
     private bool alive = true;
     private bool jump = false;
@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        circleCollider = GetComponent<CircleCollider2D>();
+        playerCollider = GetComponent<CapsuleCollider2D>();
     }
 
     private void Update()
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
     {
         // Make it visually better
         rb.velocity = Vector2.zero;
-        circleCollider.enabled = false;
+        playerCollider.enabled = false;
         alive = false;
         GameObject.Find("GameManager").GetComponent<GameManager>().GameOver();
     }
