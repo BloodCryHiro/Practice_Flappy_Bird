@@ -19,6 +19,16 @@ public class MainGameUI : MonoBehaviour
             waitForJump.SetActive(false);
     }
 
+    private void OnEnable()
+    {
+        PlayerController.onPlayerDeath += EnterDeathMenu;
+    }
+
+    private void OnDisable()
+    {
+        PlayerController.onPlayerDeath -= EnterDeathMenu;
+    }
+
     public void PauseGame()
     {
         Time.timeScale = 0f;
@@ -42,7 +52,7 @@ public class MainGameUI : MonoBehaviour
         Application.Quit();
     }
 
-    public void EnterDeathMenu()
+    private void EnterDeathMenu()
     {
         Time.timeScale = 0f;
         deathMenu.SetActive(true);

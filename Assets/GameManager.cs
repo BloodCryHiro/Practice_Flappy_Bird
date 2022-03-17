@@ -21,9 +21,4 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1f;
         }
     }
-
-    public void GameOver()
-    {
-        GameObject.Find("Canvas").GetComponent<MainGameUI>().EnterDeathMenu();
-    }
 }

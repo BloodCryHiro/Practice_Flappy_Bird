@@ -65,10 +65,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 639987315616864492}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e525c1a56ceb9194a8119a7f562b162a, type: 3}
+  m_Script: {fileID: 11500000, guid: 55f2457e891d53c439f7f1dd9f5d9c8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2.5
+  moveSpeed: 3
 --- !u!1 &639987316566311499
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,8 +376,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6754828506572656861}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2de2292a552c07419e5f21306e12f94, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d7c1f3ffbf87b34a9def51d7e92ce17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 6132974412383355016, guid: ca0088cd70e2e2a41b9cac97624ee658, type: 3}
   pipeController: {fileID: 1980134221230762323}

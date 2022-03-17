@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private bool alive = true;
     private bool jump = false;
     [SerializeField] private float jumpForce = 15f;
+    public static event Action onPlayerDeath;
 
     private void Start()
     {
@@ -48,7 +50,7 @@ public class PlayerController : MonoBehaviour
         rb.velocity = Vector2.zero;
         playerCollider.enabled = false;
         alive = false;
-        GameObject.Find("GameManager").GetComponent<GameManager>().GameOver();
+        onPlayerDeath?.Invoke();
     }
 
     // Setup a timer to ensure player can't jump too frequently
