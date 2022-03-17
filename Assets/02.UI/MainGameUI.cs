@@ -11,6 +11,7 @@ public class MainGameUI : MonoBehaviour
     [SerializeField] private GameObject deathMenu;
     [SerializeField] private TMP_Text pointText;
     private bool isGameStart = false;
+    private bool isGamePause = false;
 
     private void Start()
     {
@@ -21,7 +22,7 @@ public class MainGameUI : MonoBehaviour
     {
         pointText.text = "Point: " + GameManager.Instance.point;
 
-        if (Input.GetKeyDown(KeyCode.Space) && !isGameStart)
+        if (Input.GetKeyDown(KeyCode.Space) && !isGameStart && !isGamePause)
         {
             waitForJump.SetActive(false);
             Time.timeScale = 1f;
@@ -43,12 +44,15 @@ public class MainGameUI : MonoBehaviour
     {
         Time.timeScale = 0f;
         pauseMenu.SetActive(true);
+        isGamePause = true;
     }
 
     public void ResumeGame()
     {
-        Time.timeScale = 1f;
+        if (isGameStart)
+            Time.timeScale = 1f;
         pauseMenu.SetActive(false);
+        isGamePause = false;
     }
 
     public void BackToMainMenu()
