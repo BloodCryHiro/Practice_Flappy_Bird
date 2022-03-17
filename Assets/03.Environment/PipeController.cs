@@ -10,7 +10,7 @@ public class PipeController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        transform.position = new Vector2(transform.position.x, Random.Range(-2, 2));
+        transform.position = new Vector2(transform.position.x, Random.Range(-2f, 2f));
     }
 
     private void FixedUpdate()

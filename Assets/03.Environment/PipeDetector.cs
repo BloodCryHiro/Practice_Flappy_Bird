@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PipeDetector : MonoBehaviour
 {
-    [SerializeField] private PipeController pipeController;
+    public UnityEvent onHitPortal;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Portal")
-            pipeController.Teleport();
+            onHitPortal.Invoke();
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -20,6 +21,6 @@ public class PipeDetector : MonoBehaviour
 
     private void GetPoint()
     {
-        GameObject.Find("GameManager").GetComponent<GameManager>().point++;
+        GameManager.Instance.point++;
     }
 }

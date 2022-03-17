@@ -10,13 +10,23 @@ public class MainGameUI : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject deathMenu;
     [SerializeField] private TMP_Text pointText;
+    private bool isGameStart = false;
+
+    private void Start()
+    {
+        Time.timeScale = 0f;
+    }
 
     private void Update()
     {
-        pointText.text = "Point: " + GameObject.Find("GameManager").GetComponent<GameManager>().point;
+        pointText.text = "Point: " + GameManager.Instance.point;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !isGameStart)
+        {
             waitForJump.SetActive(false);
+            Time.timeScale = 1f;
+            isGameStart = true;
+        }
     }
 
     private void OnEnable()

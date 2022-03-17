@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private bool isGameStart = false;
+    public static GameManager Instance { get; private set; }
+
     public int point = 0;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
         point = 0;
-        Time.timeScale = 0f;
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && !isGameStart)
-        {
-            isGameStart = true;
-            Time.timeScale = 1f;
-        }
     }
 }

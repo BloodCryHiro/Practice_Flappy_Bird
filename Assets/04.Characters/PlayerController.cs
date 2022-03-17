@@ -52,6 +52,4 @@ public class PlayerController : MonoBehaviour
         alive = false;
         onPlayerDeath?.Invoke();
     }
-
-    // Setup a timer to ensure player can't jump too frequently
 }

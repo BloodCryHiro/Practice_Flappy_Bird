@@ -379,4 +379,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7c1f3ffbf87b34a9def51d7e92ce17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pipeController: {fileID: 1980134221230762323}
+  onHitPortal:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1980134221230762323}
+        m_TargetAssemblyTypeName: PipeController, Assembly-CSharp
+        m_MethodName: Teleport
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
