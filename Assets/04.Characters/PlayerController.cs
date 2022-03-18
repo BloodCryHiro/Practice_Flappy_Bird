@@ -15,12 +15,23 @@ public class PlayerController : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField] private AudioClip jumpSound;
     [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioClip getPointSound;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<CapsuleCollider2D>();
         audioSource = GetComponent<AudioSource>();
+    }
+
+    private void OnEnable()
+    {
+        PipeDetector.onGetPoint += GetPoint;
+    }
+
+    private void OnDisable()
+    {
+        PipeDetector.onGetPoint -= GetPoint;
     }
 
     private void Update()
@@ -58,6 +69,11 @@ public class PlayerController : MonoBehaviour
         alive = false;
         PlaySound(deathSound);
         onPlayerDeath?.Invoke();
+    }
+
+    private void GetPoint()
+    {
+        PlaySound(getPointSound);
     }
 
     private void PlaySound(AudioClip sound)

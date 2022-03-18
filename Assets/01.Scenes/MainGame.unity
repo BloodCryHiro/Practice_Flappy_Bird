@@ -3567,6 +3567,7 @@ MonoBehaviour:
   jumpForce: 15
   jumpSound: {fileID: 8300000, guid: 0806da99fdec1aa4189cc7a8cac6d86d, type: 3}
   deathSound: {fileID: 8300000, guid: 2f093f15cf1ea38468f3656240852673, type: 3}
+  getPointSound: {fileID: 8300000, guid: 8a032d14d358d214496887a779854494, type: 3}
 --- !u!70 &1769671903
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

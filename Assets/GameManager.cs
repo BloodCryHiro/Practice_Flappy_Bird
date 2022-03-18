@@ -16,8 +16,23 @@ public class GameManager : MonoBehaviour
             Instance = this;
     }
 
+    private void OnEnable()
+    {
+        PipeDetector.onGetPoint += GetPoint;
+    }
+
+    private void OnDisable()
+    {
+        PipeDetector.onGetPoint -= GetPoint;
+    }
+
     private void Start()
     {
         point = 0;
+    }
+
+    private void GetPoint()
+    {
+        point++;
     }
 }

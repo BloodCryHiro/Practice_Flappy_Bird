@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine.Events;
 public class PipeDetector : MonoBehaviour
 {
     public UnityEvent onHitPortal;
+    public static event Action onGetPoint;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -21,6 +23,6 @@ public class PipeDetector : MonoBehaviour
 
     private void GetPoint()
     {
-        GameManager.Instance.point++;
+        onGetPoint?.Invoke();
     }
 }
