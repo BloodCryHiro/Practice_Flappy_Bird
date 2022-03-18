@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Pipe")
+        if (other.gameObject.tag == "Pipe" || other.gameObject.tag == "Ground")
             Dead();
     }
 
