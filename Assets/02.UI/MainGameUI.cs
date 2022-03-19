@@ -6,6 +6,7 @@ using TMPro;
 
 public class MainGameUI : MonoBehaviour
 {
+    private Animator animator;
     [SerializeField] private GameObject waitForJump;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject deathMenu;
@@ -15,6 +16,7 @@ public class MainGameUI : MonoBehaviour
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         Time.timeScale = 0f;
     }
 
@@ -43,15 +45,19 @@ public class MainGameUI : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0f;
-        pauseMenu.SetActive(true);
         isGamePause = true;
     }
 
     public void ResumeGame()
     {
+        StartCoroutine(ResumeGameCoroutine());
+    }
+
+    private IEnumerator ResumeGameCoroutine()
+    {
+        yield return new WaitForSeconds(.2f);
         if (isGameStart)
             Time.timeScale = 1f;
-        pauseMenu.SetActive(false);
         isGamePause = false;
     }
 
@@ -68,13 +74,12 @@ public class MainGameUI : MonoBehaviour
 
     private void EnterDeathMenu()
     {
+        animator.SetTrigger("DeathMenuIn");
         Time.timeScale = 0f;
-        deathMenu.SetActive(true);
     }
 
     public void RestartGame()
     {
-        deathMenu.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene(1);
     }
