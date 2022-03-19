@@ -63,7 +63,6 @@ public class PlayerController : MonoBehaviour
 
     private void Dead()
     {
-        // Make it visually better
         rb.velocity = Vector2.zero;
         playerCollider.enabled = false;
         alive = false;
