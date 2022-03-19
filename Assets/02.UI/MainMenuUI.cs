@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuUI : MonoBehaviour
 {
-    public IEnumerator BlackOutCoroutine()
+    private IEnumerator BlackOutCoroutine()
     {
         yield return new WaitForSeconds(.8f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

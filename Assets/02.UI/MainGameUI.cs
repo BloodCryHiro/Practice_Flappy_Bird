@@ -8,8 +8,6 @@ public class MainGameUI : MonoBehaviour
 {
     private Animator animator;
     [SerializeField] private GameObject waitForJump;
-    [SerializeField] private GameObject pauseMenu;
-    [SerializeField] private GameObject deathMenu;
     [SerializeField] private TMP_Text pointText;
     private bool isGameStart = false;
     private bool isGamePause = false;
@@ -48,17 +46,17 @@ public class MainGameUI : MonoBehaviour
         isGamePause = true;
     }
 
-    public void ResumeGame()
-    {
-        StartCoroutine(ResumeGameCoroutine());
-    }
-
     private IEnumerator ResumeGameCoroutine()
     {
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSecondsRealtime(.2f);
         if (isGameStart)
             Time.timeScale = 1f;
         isGamePause = false;
+    }
+
+    public void ResumeGame()
+    {
+        StartCoroutine(ResumeGameCoroutine());
     }
 
     public void BackToMainMenu()
